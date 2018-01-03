@@ -1,0 +1,23 @@
+type File @model {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime!
+  url: String! @isUnique
+}
+
+type Transaction @model {
+  id: ID! @isUnique
+  shares: Float! @defaultValue(value: 0.0)
+  symbol: String! @defaultValue(value: "USD")
+}
+
+type User @model {
+  auth0UserId: String @isUnique
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+}
